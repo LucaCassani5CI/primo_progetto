@@ -1,0 +1,29 @@
+{%extends "base.html"%}
+
+{%block title%}{{block.super}} | somma {%endblock title%}
+
+{%block content%}
+    <h1>Somma</h1>
+    {% if n1 < n2 %}
+        <p style="color:red">{{n1}}</p>
+        +
+        <p style="color:green">{{n2}}</p>
+        =
+        <p>{{somma}}</p>
+    {% elif n1 == n2 %}
+        <p>{{n1}}</p>
+        +
+        <p>{{n2}}</p>
+        =
+        <p>{{somma}}</p>
+    {% else %}
+        <p style="color:green">{{n1}}</p>
+        +
+        <p style="color:red">{{n2}}</p>
+        =
+        <p>{{somma}}</p>
+    {% endif %}
+    
+
+
+{%endblock content%}
