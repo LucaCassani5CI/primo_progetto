@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, ArticoloDetailViewCB, ArticoloListView, GiornalistaDetailViewCB, GiornalistaListView, giornalisti_list_api, giornalisti_api, articoli_list_api, articoli_api #articoloDetailView
+from .views import home, ArticoloDetailViewCB, ArticoloListView, GiornalistaDetailViewCB, GiornalistaListView, giornalisti_list_api, giornalisti_api, articoli_list_api, articoli_api, tabella_giornalisti, tabella_articoli #articoloDetailView
 
 app_name = 'news'
 
@@ -14,5 +14,7 @@ urlpatterns = [
     path("giornalisto_api/<int:pk>", giornalisti_api, name="giornalisti_api"),
     path("lista_articoli_api/",articoli_list_api, name="articoli_list_api"),
     path("articolo_api/<int:pk>", articoli_api, name="articoli_api"),
+    path("tabella_giornalisti/", tabella_giornalisti, name="tabella_giornalisti"),
+    path("tabella_articoli/", tabella_articoli, name="tabella_articoli"),
 
 ]

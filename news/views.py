@@ -127,3 +127,9 @@ def articoli_api(request, pk):
         },
         status=404)
     return response
+
+def tabella_giornalisti(request):
+    return render(request,"tabella_giornalisti.html")
+
+def tabella_articoli(request):
+    return render(request,"tabella_articoli.html")

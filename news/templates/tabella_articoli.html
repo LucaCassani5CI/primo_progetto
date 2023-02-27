@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{%block title%} Tabella Articoli {% endblock title%} 
+{%block content%} 
+
+<h1>Tabella Articoli</h1>
+
+{%endblock content%} 
+
+{%block script%} 
+
+<script>
+    const url="https://cassaniluca.eu.pythonanywhere.com/news/lista_articoli_api/";
+    (async function () {  
+
+        const response = await fetch(url);
+        const result = await response.json();
+
+        console.log(result);
+
+        let tabella = "<table class='table table-hover'><tr><th>Titolo</th><th>Contenuto</th></tr>";
+        
+        for (const data in result) {
+
+            for (let i = 0; i < result[data].length; i++) {
+                tabella += "<tr>";
+                tabella += `<td>${result[data][i].titolo}</td>`;
+                tabella += `<td>${result[data][i].contenuto}</td>`;
+                tabella += "</tr>";
+            }
+        
+        }
+        tabella += "</table>";
+
+        document.body.innerHTML += tabella;
+
+    })();
+</script>
+
+{%endblock script%}
